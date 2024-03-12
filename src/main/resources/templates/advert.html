@@ -62,18 +62,22 @@
         </div>
     </div>
 </header>
-
 <main>
     <section class="py-5 text-center container">
         <div class="container">
-            <div th:each="el: ${allAdvertsList}" class="alert-info mt-2">
+            <div th:each="el: ${adv}" class="alert-info mt-2">
+                <h3>Наименование:</h3>
                 <h3 th:text="${el.getName()}"></h3>
-                <a th:href="@{/advertDisc(id=(${el.getId()}))}" class="btn btn-secondary my-2">Подробнее</a>
+                <h3>Вес:</h3>
+                <p th:text="${el.getWeight()}"></p>
+                <h3>Цена:</h3>
+                <p th:text="${el.getPrice()}"></p>
+                <h3>Описание:</h3>
+                <p th:text="${el.getDisc()}"></p>
             </div>
         </div>
     </section>
 </main>
-
 <footer class="text-muted py-5">
     <div class="container">
         <p class="float-end mb-1">
